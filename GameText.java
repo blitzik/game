@@ -14,6 +14,10 @@ public final class GameText {
     private static long messageDuration;
     private static MessageType messageType;
     
+    private GameText()
+    {
+    }
+    
     public static void setText(String text, int duration, MessageType type)
     {
         messageText = text;

@@ -19,12 +19,10 @@ public class Poison extends Object implements IGameObject{
         if (game.getSnake().isInDestructionMode()) {
             
             game.getObjectRegister().removeObject(this);
-            GameText.setText("+3 Bonus", 500, MessageType.BONUS);
             game.addScore(3);
             
         } else {
             
-            GameText.setText("GAME OVER", 200, MessageType.BAD);
             game.stop();
         }  
     }

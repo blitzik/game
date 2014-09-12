@@ -24,12 +24,9 @@ public class Apple extends Object implements IGameObject{
         
         game.addScore(1);
         
-        GameText.setText("+1", 500, MessageType.BONUS);
-        
         if (game.getSnake().getBody().size() % 3 == 0) {
             game.getObjectRegister().addGameObject(new Poison());
             game.addScore(2);
-            GameText.setText("Bonus +2", 500, MessageType.BONUS);
         }
     }
 

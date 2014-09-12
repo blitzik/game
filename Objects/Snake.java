@@ -39,8 +39,6 @@ public class Snake extends Object{
         
     public void update(Game game) {
 
-        // posun souřadnic těla hada
-        // musí být první, vychází ze souřadnic hlavy
         int prevX = this.c.getX();
         int prevY = this.c.getY();
         int temp;
@@ -79,13 +77,10 @@ public class Snake extends Object{
           
         Graphics2D g2d = (Graphics2D) g;
         
-        // Vykreslení těla hada
         for (BodyPart bp : body) {
             bp.render(g);
         }
-        
-        // Vykreslení hlavy hada
-                      
+                              
         if (canDestructObject) {
             g2d.setColor(Color.BLUE);
         } else {
@@ -103,9 +98,6 @@ public class Snake extends Object{
     
     public void addPartOfBody(BodyPart go)
     {                
-        // nastavit souradnice na hlavu hada,
-        // tim se zobrazi dalsi clanek az po 
-        // celkovem prejeti bonusu
         go.setX(this.getX());
         go.setY(this.getY());
         this.body.add(0, go);       

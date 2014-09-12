@@ -1,10 +1,8 @@
 package game.Objects;
 
-import game.Enums.MessageType;
 import java.awt.Color;
 import java.awt.Graphics;
 import game.Game;
-import game.GameText;
 import static game.Objects.Object.size;
 
 /**
@@ -18,9 +16,14 @@ public class Slicer extends Object implements IGameObject{
     public void update(Game game)
     {
         game.getObjectRegister().removeObject(this);
-        game.getLifeTimer().prolongTime(2000);
         
-        GameText.setText("+1", 500, MessageType.BONUS);
+        if (game.getSnake().isInDestructionMode()) {
+            game.getDestructionTimer().prolongTime(2500);
+        } else {
+            game.getObjectRegister().addGameObject(new Poison());
+            game.getObjectRegister().addGameObject(new Poison());
+        }
+
         game.addScore(1);
 
     }

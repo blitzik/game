@@ -171,7 +171,14 @@ public class Game {
     
     public void addScore(int score)
     {
+        if (score > 0) {
+            GameText.setText("+ " + score, 500, MessageType.BONUS);
+        } else {
+            GameText.setText("- " + score, 500, MessageType.WARRNING);
+        }
+        
         this.score += score;
+        
     }
         
     
@@ -211,6 +218,8 @@ public class Game {
     
     public void stop()
     {
+        GameText.setText("GAME OVER", 200, MessageType.BAD);
+        
         this.running = false;
     }
 

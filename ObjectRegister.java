@@ -26,7 +26,7 @@ public final class ObjectRegister {
         this.gb = gb;
         this.snake = snake;
         
-        createWalls();
+        this.createWalls();
     }
     
     public void addGameObject(int x, int y, IGameObject go)
